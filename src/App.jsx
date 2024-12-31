@@ -103,9 +103,13 @@ function App() {
 <div>
 <h1 className='text-2xl font-black mt-3'>Get in Touch</h1>
 <p className='font-light text-neutral-500'>Want to chat? Just shoot me a dm with a direct question on Linkedin and I'll respond whenever I can. I will ignore all soliciting.</p>
-<ConfettiButton className="mt-5 px-5 font-light rounded-full" >Text me on LinkedIn</ConfettiButton>
+<ConfettiButton  
+ className="mt-5 px-5 font-light rounded-full"
+ url="https://www.linkedin.com/in/ishita007"
+ initialButtonText="Text me on LinkedIn" 
+ clickedButtonText="Redirecting..."
+ >Text me on LinkedIn</ConfettiButton>
 </div>
-
 </section>
 </BlurFade>
 

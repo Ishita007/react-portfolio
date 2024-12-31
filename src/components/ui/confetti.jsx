@@ -6,6 +6,7 @@ import React, {
   useImperativeHandle,
   useMemo,
   useRef,
+  useState
 } from "react";
 import confetti from "canvas-confetti";
 
@@ -81,11 +82,16 @@ export const Confetti = ConfettiComponent;
 
 const ConfettiButtonComponent = ({
   options,
+  url,
+  initialButtonText, 
+  clickedButtonText,
   children,
   ...props
 }) => {
+  const [buttonText, setButtonText] = useState(initialButtonText);
   const handleClick = async (event) => {
     try {
+      setButtonText(clickedButtonText);
       const rect = event.currentTarget.getBoundingClientRect();
       const x = rect.left + rect.width / 2;
       const y = rect.top + rect.height / 2;
@@ -96,6 +102,9 @@ const ConfettiButtonComponent = ({
           y: y / window.innerHeight,
         },
       });
+      if(url){
+      window.location.href =url;
+      }
     } catch (error) {
       console.error("Confetti button error:", error);
     }
@@ -103,7 +112,8 @@ const ConfettiButtonComponent = ({
 
   return (
     (<Button onClick={handleClick} {...props}>
-      {children}
+      {/* {children} */}
+      {buttonText}
     </Button>)
   );
 };
