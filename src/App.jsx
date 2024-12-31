@@ -18,7 +18,7 @@ function App() {
    <>
        <BlurFade delay={0.5} inView>
 
-   <section className='mt-24 max-w-2xl mx-auto' >
+   <section className='mt-20 max-w-2xl mx-auto' >
     <div className='flex gap-14 items-center'  >
 <div>
   <h1 className='text-4xl font-black'>Hey,I am Ishita🙋</h1>
